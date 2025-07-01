@@ -310,6 +310,48 @@ span {
     color: #fffcf5;
 }
 
+.card {
+    width: 180px;
+    height: 240px;
+    background-color: #fbefff;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+  }
+  
+  .card p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4c2b4d;
+  }
+  
+  /* Custom background per card */
+  .card:nth-child(1) { background-color: #dbe3ff; }
+  .card:nth-child(2) { background-color: #fffbd5; }
+  .card:nth-child(3) { background-color: #fde3f3; }
+  .card:nth-child(4) { background-color: #dad9ff; }
+  .card:nth-child(5) { background-color: #fbe9f2; }
+  .card:nth-child(6) { background-color: #ddeefc; }
+  .card:nth-child(7) { background-color: #e5f1ff; }
+  .card:nth-child(8) { background-color: #fffbd5; }
+
 .services h2 {
     margin-bottom: 5rem;
     color: #374375;
@@ -320,35 +362,12 @@ span {
     grid-template-columns: repeat(3, 2fr);
     align-items: center;
     gap: 1.5rem;
-}
-
-.service-box {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    background-color: #895159;
-    height: 600px;
-    border-radius: 3rem;
-    border: 5px solid transparent;
-    cursor: pointer;
-    transition: 0.4s ease-in-out;
-}
-
-.service-box:hover {
-    background: #dfaea1;
-    color: #374375;
-    border: 5px solid #895159;
-    transform: scale(1.03);
-}
-
-.service-box .service-info {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem 3rem;
+    gap: 20px;
+    padding: 20px;
+    margin: 0;
 }
 
 .service-info h4 {
@@ -371,6 +390,74 @@ span {
     background: url(project3.jpg) center no-repeat;
     background-size: cover;
 }
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 30px;
+  }
+  
+  /* Masonry Columns */
+  .masonry-gallery {
+    column-count: 4;
+    column-gap: 15px;
+    padding: 10 0px;
+  }
+  
+  @media (max-width: 768px) {
+    .masonry-gallery {
+      column-count: 2;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .masonry-gallery {
+      column-count: 1;
+    }
+  }
+  
+  .item {
+    position: relative;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    break-inside: avoid;
+    background: #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+  
+  .item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .item:hover img {
+    transform: scale(1.03);
+  }
+  
+  /* Overlay */
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+  }
+  
+  .item:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
 .projects-box {
     display: grid;
